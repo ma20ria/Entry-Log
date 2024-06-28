@@ -1,5 +1,6 @@
 package com.mariamanuel.entrylog;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -28,8 +29,16 @@ b1.setOnClickListener(new View.OnClickListener() {
     public void onClick(View v) {
         String getUsername=e1.getText().toString();
         String getPassword=e2.getText().toString();
-        Toast.makeText(getApplicationContext(), getUsername+" "+getPassword, Toast.LENGTH_SHORT).show();
-    }
+        if(getUsername.equals("admin")&&getPassword.equals("12345"))
+        {
+          Intent i=new Intent(getApplicationContext(),Logined.class);
+          startActivity(i);
+        }
+        else
+        {
+            Toast.makeText(getApplicationContext(), "Invalid Credentials", Toast.LENGTH_SHORT).show();
+        }
+        }
 });
     }
 }
