@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:padding="80px"
     android:gravity="center"
-    android:background="#E2DEB9"
+    android:background="#FFFFFF"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <TextView
         android:layout_width="match_parent"
@@ -15,7 +15,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter your name"
+        android:drawableLeft="@drawable/baseline_drive_file_rename_outline_24"
         android:id="@+id/per"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,7 +28,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:hint="Enter your AdmNo"
+        android:drawableLeft="@drawable/baseline_school_24"
         android:inputType="number"
+
     android:id="@+id/ano"/>
     <TextView
         android:layout_width="match_parent"
@@ -38,6 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter your Depatment name"
+        android:drawableLeft="@drawable/baseline_groups_24"
         android:id="@+id/depname"/>
     <TextView
         android:layout_width="match_parent"
@@ -48,6 +53,7 @@
     <EditText
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/baseline_computer_24"
     android:hint="Enter your SystemNo"
         android:inputType="number"
     android:id="@+id/sysno"/>

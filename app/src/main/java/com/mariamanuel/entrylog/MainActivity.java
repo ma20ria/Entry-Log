@@ -1,6 +1,7 @@
 package com.mariamanuel.entrylog;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -21,6 +22,13 @@ AppCompatButton b1;
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        SharedPreferences preference=getSharedPreferences("Logapp",MODE_PRIVATE);
+        String username=preference.getString("user",null);
+        if(username!=null)
+        {
+            Intent i=new Intent(getApplicationContext(),Logined.class);
+            startActivity(i);
+        }
 e1=(EditText) findViewById(R.id.uname);
 e2=(EditText) findViewById(R.id.pass);
 b1=(AppCompatButton) findViewById(R.id.lobtn);
@@ -31,6 +39,10 @@ b1.setOnClickListener(new View.OnClickListener() {
         String getPassword=e2.getText().toString();
         if(getUsername.equals("admin")&&getPassword.equals("12345"))
         {
+            SharedPreferences preference=getSharedPreferences("Logapp",MODE_PRIVATE);
+            SharedPreferences.Editor editor=preference.edit();
+         editor.putString("user","admin");
+            editor.apply();
           Intent i=new Intent(getApplicationContext(),Logined.class);
           startActivity(i);
         }
